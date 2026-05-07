@@ -84,6 +84,9 @@ The code here will also help with running the experiment in PsychoPy.
 2. You can code python in VSCode, but I recommend PyCharm instead, which is free for students. It helps with the venv stuff next.
 3. To run the python scripts included here it's best to use a 'virtual environment' - double click `setup.bat` to create one (`ett-venv`)
 4. If not running `setup.bat` or if in PsychoPy, install the `pythonnet` package.
+5. You'll know you're in the 'venv' if your terminal is prepended with `ett-venv>`. If your IDE doesn't detect it automatically:
+    - VsCode: Ctrl+Shift+P, type "Python: Select Interpreter", choose ett-venv (something like \ett-venv\Scripts\python.exe).
+    - PyCharm: File>Settings>Project>Python Interpreter>gear icon>Add>Existing Environment>ett-venv\Scripts\python.exe.
 
 Test scripts included:
 - `test.py` - runs through triggering each port.
