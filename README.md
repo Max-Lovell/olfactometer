@@ -80,7 +80,7 @@ The python API has something like `device.SubscribeToInhalationEvents(True, True
 If you want to test things out these Python scripts will run through the valves automatically. 
 The code here will also help with running the experiment in PsychoPy.
 
-1. Download the python install manager: https://www.python.org/downloads/release/pymanager-261/. Note read the install options carefully, and you MUST click 'Add to PATH' when prompted.
+1. Prerequisites: Install Python from [www.python.org/downloads](www.python.org/downloads) (any recent version — this just gets you the `py` launcher). Then double-click setup.bat — it will install Python 3.12 automatically if needed. Note read the install options carefully, and you MUST click 'Add to PATH' when prompted. Also can try running `py install 3.12` yourself.
 2. You can code python in VSCode, but I recommend PyCharm instead, which is free for students. It helps with the venv stuff next.
 3. To run the python scripts included here it's best to use a 'virtual environment' - double click `setup.bat` to create one (`ett-venv`)
 4. If not running `setup.bat` or if in PsychoPy, install the `pythonnet` package.
