@@ -23,7 +23,7 @@ clr.AddReference(r"C:\Program Files\ETTDirectControl\ETTAPI\ETTAPI.dll") # TODO:
 from ETTAPI import ETTDeviceAPI  # type: ignore
 
 
-def connect_to_olfactometer(timeout_seconds=5):
+def connect_to_olfactometer(timeout_seconds=1):
     """
     Connect to ETT Direct Control and find the olfactometer.
     Returns (ett_device, address) or raises SystemExit on failure.
