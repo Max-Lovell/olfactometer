@@ -74,7 +74,8 @@ Direct Control has a "Delay onset until" -> "respiratoryAnalogInhalationOnset" o
 The python API has something like `device.SubscribeToInhalationEvents(True, True)` and then you need to attach a function to the `device.InhalationDetected` method - can be tricky.
 
 #### APIs
-- You can find examples of how to use the APIs hidden in the files for Direct Control: `C:\Program Files\ETTDirectControl\ETTAPI\Samples\`
+- APIs and their documentation/examples are included with ETT Direct Control: `C:\Program Files\ETTDirectControl\ETTAPI`.
+- Try go to 'file:///C:/Program%20Files/ETTDirectControl/ETTAPI/AutoDoc/index.html#CSharpClass:ETTAPI.ETTDeviceAPI' in your browser, might work. You can see sample code for python and MATLAB there.
 
 ### Python API
 If you want to test things out these Python scripts will run through the valves automatically. 
@@ -93,4 +94,4 @@ Test scripts included:
   - You might need to change the path 'C:\Program Files\ETTDirectControl\ETTAPI\ETTAPI.dll' if it can't be found.
 - `api.py` - prints all public methods on the ETTDeviceAPI object. Useful for figuring out how the API works.
 
-You can run the test scripts by running `python test.py` in your terminal (adjust path to test.py if needed), or clicking 'play' in some IDEs.
+You can run the test scripts by running `python test.py` in your terminal (adjust path to test.py if needed), or clicking 'play' in some IDEs. ETT Direct Control must be running first.
