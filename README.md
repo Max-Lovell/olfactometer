@@ -90,8 +90,36 @@ The code here will also help with running the experiment in PsychoPy.
     - PyCharm: File>Settings>Project>Python Interpreter>gear icon>Add>Existing Environment>ett-venv\Scripts\python.exe.
 
 Test scripts included:
-- `test.py` - runs through triggering each port.
-  - You might need to change the path 'C:\Program Files\ETTDirectControl\ETTAPI\ETTAPI.dll' if it can't be found.
-- `api.py` - prints all public methods on the ETTDeviceAPI object. Useful for figuring out how the API works.
+Test scripts included:
+- `test.py` — runs through triggering each valve in sequence. Use this
+  first to confirm hardware communication. You might need to change the
+  path `C:\Program Files\ETTDirectControl\ETTAPI\ETTAPI.dll` inside the
+  script if your install location differs.
+- `api.py` — prints all public methods on the ETTDeviceAPI object.
+  Useful for discovering what the API can do beyond basic valve control
+  (trigger out, respiration subscription, etc.).
+- `sebastian.py` — ETT's official Python sample, lightly annotated.
+  Demonstrates the `__overloads__` pattern for explicitly resolving
+  the bool vs. duration variants of `SetChannel`.
+- `psychopy.py` — minimal connection + helper functions
+  (`set_valve`, `close_all_valves`) ready to paste into a PsychoPy
+  Builder Code Component. Handles the `IsConnected` quirk (see below)
+  and uses explicit overload resolution so both `set_valve(2, True)`
+  (manual open) and `set_valve(2, 6000)` (open with auto-close) work
+  unambiguously.
+- `triggers.py` — examples of sending event markers via pyxid2
+  (Cedrus devices) and pyserial (generic serial-port triggers).
+  Independent of the olfactometer; included for reference when adding
+  EEG/biopac markers to a PsychoPy experiment.
+- `isconnected_bug.py` — minimal repro for a quirk in the ETT API:
+  `device.IsConnected` returns `False` even when the connection is
+  fully working. Run this to confirm before contacting ETT support,
+  or just read it to understand why `psychopy.py` gates on
+  `ScanDeviceList()` rather than `IsConnected`.
+- `setup.bat` — installs Python 3.12 if needed and creates the
+  `ett-venv` virtual environment with `pythonnet` installed.
+- `repo-structure.txt` — text dump of the repo layout for reference.
 
-You can run the test scripts by running `python test.py` in your terminal (adjust path to test.py if needed), or clicking 'play' in some IDEs. ETT Direct Control must be running first.
+You can run any of the test scripts by activating the venv and running
+e.g. `python test.py` in your terminal, or by clicking 'play' in your
+IDE. ETT Direct Control must be running first in all cases.
