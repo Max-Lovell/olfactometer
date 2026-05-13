@@ -32,7 +32,7 @@ def connect_to_olfactometer(timeout_seconds=1):
     ett_device.Connect("127.0.0.1")
     time.sleep(timeout_seconds)
 
-    print(f"IsConnected reports: {ett_device.IsConnected}")
+    print(f"IsConnected reports: {ett_device.IsConnected}") # NOTE this doesn't seem to work.
 
     # IsConnected can be unreliable as a gate - try scanning regardless
     try:

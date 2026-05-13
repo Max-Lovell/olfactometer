@@ -28,11 +28,11 @@ import clr
 
 clr.AddReference(r"C:\Program Files\ETTDirectControl\ETTAPI\ETTAPI.dll")
 
-from System import Int32,Int64, Boolean, String
+from System import Int32,Int64, Boolean, String # type: ignore
 
 # dll import
 
-from ETTAPI import ETTDeviceAPI
+from ETTAPI import ETTDeviceAPI # type: ignore
 
 Device=ETTDeviceAPI()
 
